@@ -7,7 +7,9 @@ link-citations: true
 ---
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(eval = FALSE)
+knitr::opts_chunk$set(eval = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(error = FALSE)
 ```
 
 Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously.
@@ -47,7 +49,7 @@ These packages are already installed for you.
 You can load them by running the following in your Console:
 
 ```{r}
-library(tidyverse) 
+library(tidyverse)
 library(tidymodels)
 library(openintro)
 ```
@@ -86,6 +88,17 @@ evals %>%
 
 ```{marginfigure}
 **Hint:** See the help page for the function at http://ggplot2.tidyverse.org/reference/index.html.
+```
+
+```{r}
+evals %>%
+  ggplot(aes(x=bty_avg, y = score))+
+  geom_point(alpha=0.4) +
+  geom_smooth(method = "lm",
+              se=FALSE) +
+  xlab("Beauty Average Rating")+
+  ylab("Average Professor Evaluation") +
+  ggtitle("Scatter plot of Average Beauty Rating to Average Evaluation Score")
 ```
 
 3.  Recreate the scatterplot from Exercise 2, but this time use\
