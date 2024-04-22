@@ -1,5 +1,6 @@
 ---
 title: "Lab 8 - Grading the professor, Pt. 1"
+author: "Yihan(April) Wang"
 subtitle: "Modelling with a single predictor"
 output: html_document
 link-citations: true
